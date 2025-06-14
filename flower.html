@@ -3,11 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex, nofollow">
-  <title>flower</title>
+  <title>花の色を変えるテスト</title>
+  <style>
+    button {
+      margin: 0.5em;
+      padding: 0.5em 1em;
+      font-size: 16px;
+    }
+    svg {
+      width: 200px;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-  <h1>これは子ページです</h1>
-  <p>GitHub Pagesのテスト中 🌼</p>
-  
+  <h1>🌷 花の色を変えてみよう</h1>
+
+  <!-- SVG読み込み（あなたのtulip.svgの中身をここに貼り付ける） -->
+  <div id="svg-container">
+    <!-- 👇ここにSVGの中身をコピペする -->
+    <!-- fill="#FFD700" のように黄色になっている部分を探して、idもつけておくと便利 -->
+  </div>
+
+  <button onclick="changeColor('#ff69b4')">ピンクにする</button>
+  <button onclick="changeColor('#87cefa')">水色にする</button>
+  <button onclick="changeColor('#FFD700')">元に戻す（黄色）</button>
+
+  <script>
+    function changeColor(color) {
+      // id="petal" をつけた部分のfill属性を変更
+      const target = document.querySelector('#petal');
+      if (target) {
+        target.setAttribute('fill', color);
+      }
+    }
+  </script>
 </body>
 </html>
